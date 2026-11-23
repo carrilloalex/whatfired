@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for the WhatFired browser extension.">
+  <title>Privacy Policy | WhatFired</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="WhatFired home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="7.1" stroke="#1687F8" stroke-width="3.8" stroke-linecap="round" stroke-dasharray="8.7 6.2" transform="rotate(-8 12 12)"/>
+            <circle cx="12" cy="12" r="1.9" fill="#D35400"/>
+          </svg>
+        </span>
+        WhatFired
+      </a>
+      <a class="header-link" href="privacy-policy.html" aria-current="page">Privacy</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <article class="policy">
+      <p class="eyebrow">WhatFired</p>
+      <h1>Privacy Policy</h1>
+      <p class="lede">WhatFired helps you inspect analytics events while keeping the inspected data inside your browser.</p>
+      <p class="meta">Effective November 23, 2026</p>
+
+      <div class="summary" aria-label="Privacy summary">
+        <div class="summary-item">
+          <strong>No external servers</strong>
+          <span>WhatFired does not send captured data to the developer.</span>
+        </div>
+        <div class="summary-item">
+          <strong>Local processing</strong>
+          <span>Analytics activity is processed and displayed on your device.</span>
+        </div>
+        <div class="summary-item">
+          <strong>No selling or sharing</strong>
+          <span>Captured information is never sold or transferred to third parties.</span>
+        </div>
+      </div>
+
+      <h2>1. Scope</h2>
+      <p>This Privacy Policy explains how the WhatFired browser extension ("WhatFired", "the extension", "we" or "us") handles information when you use it. WhatFired's single purpose is to let users inspect and understand analytics events triggered by their interactions on a website.</p>
+
+      <h2>2. Information processed by the extension</h2>
+      <p>When you activate WhatFired on a website, the extension may process the following information as needed to provide its user-facing inspection features:</p>
+      <ul>
+        <li><strong>Web browsing information:</strong> the active page URL, hostname, path, page title, navigation destination, and timestamps associated with inspected activity.</li>
+        <li><strong>User activity:</strong> clicks, form submissions, navigation actions, and descriptive labels or selectors for the interface element involved.</li>
+        <li><strong>Website and analytics content:</strong> analytics provider names, event names and types, event properties, values, and analytics request payloads.</li>
+        <li><strong>Identifiers included in analytics events:</strong> user, anonymous, group, session, or message identifiers when the website itself includes them in an analytics event.</li>
+      </ul>
+      <p>Because analytics implementations are controlled by the websites you inspect, their event payloads may contain personal information. WhatFired displays this information locally for the inspection task. It does not transmit it to us.</p>
+
+      <h2>3. Information WhatFired is not designed to collect</h2>
+      <p>WhatFired does not intentionally collect passwords, authentication credentials, cookies, payment-card details, private keys or the text you enter into form fields. The extension redacts values whose property names indicate common sensitive data such as passwords, authorization tokens, cookies, secrets, credit-card data and API keys.</p>
+      <p class="note"><strong>Important:</strong> redaction is a safety measure, not a guarantee that every website uses predictable property names. Only activate the extension on websites and environments where you are authorized to inspect analytics data.</p>
+
+      <h2>4. How information is used</h2>
+      <p>Processed information is used only to provide WhatFired's single purpose: showing the relationship between a user interaction and the analytics events it triggered, letting the user search and filter those events and allowing event names and properties to be copied into analytics tools.</p>
+
+      <h2>5. Local storage and retention</h2>
+      <ul>
+        <li>Recent captured activity is stored in <code>chrome.storage.session</code> so the popup can display it and so recent events are not lost if Chrome suspends the extension's background worker.</li>
+        <li>Chrome clears session captures when the browser restarts or when the extension is reloaded, disabled, or updated.</li>
+        <li>WhatFired may store a source-filter preference in <code>chrome.storage.local</code> for up to 90 days. This preference contains only a website origin and the selected analytics provider name. It does not contain page paths, captured events, properties or payloads.</li>
+        <li>You can clear captured activity from the extension interface and revoke optional website access through your browser's extension controls at any time.</li>
+      </ul>
+
+      <h2>6. Data transmission and sharing</h2>
+      <p>WhatFired has no developer-operated server and makes no external network requests of its own. Captured analytics data is not transmitted to us, sold, rented, shared or transferred to third parties. The extension does not use captured data for advertising, profiling, credit decisions, lending or any purpose unrelated to its analytics-inspection functionality.</p>
+
+      <h2>7. Permissions</h2>
+      <ul>
+        <li><strong>activeTab:</strong> provides temporary access only after you open WhatFired on the current tab.</li>
+        <li><strong>scripting:</strong> injects the extension's bundled static observer so it can identify analytics activity in the page context. WhatFired does not download or execute remote code.</li>
+        <li><strong>storage:</strong> stores recent captures in session storage and remembers the optional provider-filter preference described above.</li>
+        <li><strong>Optional website access:</strong> if you explicitly choose to always track a website, WhatFired can continue working on that site across reloads and new tabs. Access is requested one website at a time and can be revoked through your browser's extension controls at any time.</li>
+      </ul>
+
+      <h2>8. Security</h2>
+      <p>WhatFired limits website access, keeps extension storage unavailable to page scripts, validates messages passed from inspected pages, treats captured values as untrusted display data and does not include permissions for browsing history, cookies, downloads, native messaging, debugger access, proxy configuration or the local file system.</p>
+
+      <h2>9. Limited use</h2>
+      <p>WhatFired's use of information is limited to the extension's prominently disclosed user-facing analytics-inspection purpose. We do not use or transfer information for unrelated purposes and we do not use or transfer information to determine creditworthiness or for lending.</p>
+      <p>WhatFired's use of information received from Chrome APIs adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+      <h2>10. Children's privacy</h2>
+      <p>WhatFired is a browser tool and is not directed to children. We do not knowingly operate any service that receives personal information from children through the extension.</p>
+
+      <h2>11. Changes to this policy</h2>
+      <p>We may update this policy if WhatFired's functionality or data-handling practices change. The effective date at the top of this page will be updated when changes are made. Material changes will be reflected in the extension's disclosures before the changed version is published.</p>
+
+      <h2>12. Contact</h2>
+      <p>WhatFired is developed independently by Alejandro Carrillo. Questions about this policy can be sent to <a href="mailto:alejandrokerry@gmail.com">alejandrokerry@gmail.com</a>.</p>
+    </article>
+  </main>
+
+  <footer class="footer">© 2026 WhatFired · <a href="privacy-policy.html">Privacy Policy</a></footer>
+</body>
+</html>
+

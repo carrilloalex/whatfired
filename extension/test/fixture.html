@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WhatFired test shop</title>
+    <script>
+      window.analytics = {
+        track(name, properties) { console.log("track", name, properties); },
+        page(name, properties) { console.log("page", name, properties); },
+        identify(userId, traits) { console.log("identify", userId, traits); }
+      };
+      window.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          analytics.page("Product catalog", { section: "Shop", surface: "web_platform" });
+          analytics.identify("user_123", { plan: "trial" });
+          analytics.track("ab_test", { test_id: "recommendations-v2", variant: "B" });
+        }, 900);
+      });
+    </script>
+    <style>
+      body { max-width: 680px; margin: 60px auto; padding: 0 24px; font: 16px system-ui; }
+      button { padding: 12px 18px; margin-right: 10px; }
+    </style>
+  </head>
+  <body>
+    <h1>WhatFired test shop</h1>
+    <p>Use these controls after loading the extension and opening its toolbar popup.</p>
+    <button id="add-to-cart" type="button">Add to cart</button>
+    <button id="checkout" type="button">Go to checkout</button>
+    <script>
+      document.getElementById("add-to-cart").addEventListener("click", () => {
+        analytics.track("Product Added", { product_id: "sku_1048", product_name: "Linen Shirt", price: 49, currency: "EUR", quantity: 1 });
+        setTimeout(() => analytics.track("Cart Updated", { item_count: 3, cart_value: 127, currency: "EUR" }), 120);
+      });
+      document.getElementById("checkout").addEventListener("click", () => {
+        history.pushState({}, "", "/checkout");
+        analytics.track("Checkout Started", { item_count: 3, cart_value: 127, currency: "EUR" });
+      });
+    </script>
+  </body>
+</html>

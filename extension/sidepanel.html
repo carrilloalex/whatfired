@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WhatFired</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <img class="brand-icon" src="icons/icon32.png" alt="">
+        <div>
+          <h1 id="site-label">Current tab</h1>
+          <p class="product-name">WhatFired</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="live-status" class="live-status" role="status" aria-live="polite" aria-atomic="true"><span class="live-dot" aria-hidden="true"></span><span id="status-text">Live</span></span>
+        <button id="clear-button" class="clear-button" type="button" aria-label="Clear captured activity">Clear</button>
+      </div>
+    </header>
+
+    <section class="search-bar" aria-label="Find captured events">
+      <div class="search-field">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="event-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search event names, properties, values, or providers" placeholder="Find event or property">
+      </div>
+      <label class="visually-hidden" for="source-filter">Filter by analytics source</label>
+      <select id="source-filter" class="source-filter" aria-label="Filter by analytics source" hidden>
+        <option value="">All sources</option>
+      </select>
+      <output id="results-count" class="results-count" for="event-search">0 events</output>
+    </section>
+
+    <main id="feed" class="feed" aria-label="Captured analytics activity"></main>
+    <div id="announcer" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <template id="empty-template">
+      <section class="empty-state">
+        <div class="empty-icon" aria-hidden="true">◎</div>
+        <h2>Listening for analytics</h2>
+        <p>Click something or navigate in the page. Event names and properties will appear here.</p>
+      </section>
+    </template>
+
+    <template id="keep-template">
+      <section class="access-card">
+        <div>
+          <h2>Catch events before opening WhatFired?</h2>
+          <p>Allow this site to capture page-load events and new tabs automatically.</p>
+        </div>
+        <div class="access-actions">
+          <button class="primary-button compact-button" type="button" data-keep-tracking>Always track this site</button>
+          <button class="text-button" type="button" data-only-tab>Keep this tab only</button>
+        </div>
+      </section>
+    </template>
+
+    <template id="explain-template">
+      <section class="empty-state permission-state">
+        <div class="privacy-icon" aria-hidden="true">◉</div>
+        <h2>Allow automatic tracking</h2>
+        <p>Chrome will say WhatFired can read and change data on this site. It only watches analytics events, and nothing is sent anywhere.</p>
+        <button class="primary-button" type="button" data-continue-permission>Allow for this site</button>
+        <button class="text-button permission-cancel" type="button" data-cancel-permission>Cancel</button>
+        <p class="privacy-note">This applies only to <strong data-permission-host></strong>. You can remove access at any time.</p>
+      </section>
+    </template>
+
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
