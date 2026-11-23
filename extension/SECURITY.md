@@ -1,6 +1,6 @@
 # WhatFired security model
 
-WhatFired is designed for work browsers with least privilege and a small blast radius. This document describes the controls in version 1.0.12. It is a design review, not a claim of independent security certification.
+WhatFired is designed for work browsers with least privilege and a small blast radius. This document describes the controls in version 1.1. It is a design review, not a claim of independent security certification.
 
 ## Permission boundary
 
